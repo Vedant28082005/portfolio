@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+.font-display { font-family: 'Space Grotesk', sans-serif; }
+.font-heading { font-family: 'JetBrains Mono', monospace; }
+.font-body { font-family: 'Inter', sans-serif; }
+.font-label { font-family: 'IBM Plex Mono', monospace; }
