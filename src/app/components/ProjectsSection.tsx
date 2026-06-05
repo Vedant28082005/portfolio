@@ -1,37 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github } from 'lucide-react';
-
-const projects = [
-  {
-    status: 'ACTIVE',
-    statusColor: 'bg-[#00FF88]',
-    title: 'PHYSAGENT',
-    subtitle: 'Embodied AI Agent Platform',
-    desc: 'Natural language to GPIO/I2C/SPI commands. MCP-based node registry. ESP32 + RPi5 mesh. 10-stage build from sensor node to full autonomous control.',
-    stack: ['Python', 'micro-ROS', 'MCP', 'FastAPI', 'ESP32', 'RPi5'],
-    repo: 'https://github.com/Vedant28082005/physagent',
-  },
-  {
-    status: 'BUILDING',
-    statusColor: 'bg-[#FF6B2B]',
-    title: 'AUTOBOT',
-    subtitle: 'Autonomous Navigation Platform',
-    desc: 'ROS2 Jazzy + TG30 LiDAR + SLAM. Odometry sync, motor control via PWMA/PWMB. OpenManipulator-X integration in progress.',
-    stack: ['ROS2', 'Python', 'RPi5', 'LiDAR', 'Ubuntu 24.04'],
-    repo: 'https://github.com/Vedant28082005/amr-ros2-workspace',
-  },
-  {
-    status: 'SHIPPED',
-    statusColor: 'bg-[#6B7280]',
-    title: 'YATRAAI',
-    subtitle: 'AI Travel Planning Platform',
-    desc: 'AWS-hosted, FastAPI + Next.js, MongoDB Atlas. Google Gemini 1.5 Pro for trip generation. Built as cloud architecture course project @ PDEU.',
-    stack: ['AWS', 'Docker', 'FastAPI', 'Next.js', 'Gemini', 'MongoDB'],
-    repo: 'https://github.com/2903-adi/YatraAI',
-  },
-];
+import { getProjects, type Project } from '../admin/projectsStore';
 
 export function ProjectsSection() {
+  const [projects, setProjects] = useState<Project[]>(() => getProjects());
+
+  // Sync live when admin saves changes (same tab or other tab)
+  useEffect(() => {
+    const refresh = () => setProjects(getProjects());
+    window.addEventListener('projects-updated', refresh);
+    window.addEventListener('storage', refresh);
+    return () => {
+      window.removeEventListener('projects-updated', refresh);
+      window.removeEventListener('storage', refresh);
+    };
+  }, []);
+
   return (
     <section className="py-16 sm:py-24 bg-[#0A0A0F]">
       <div className="container mx-auto px-4 sm:px-6">
