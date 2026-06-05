@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers configuration for Vedant Sutariya's portfolio.
+  // The deploy pipeline reads this and outputs a merged dist/wrangler.json.
+  "name": "portfolio",
+  "compatibility_date": "2024-09-23",
+  "assets": {
+    // Serve index.html for any path not found — required for React SPA routing
+    // so that /admin, /admin/dashboard, etc. all load the app correctly.
+    "not_found_handling": "single-page-application"
+  }
+}
