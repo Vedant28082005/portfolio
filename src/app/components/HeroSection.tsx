@@ -1,10 +1,53 @@
-import React from 'react';
-import { Github, Linkedin, FileText, Download } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Github, Linkedin, FileText, Download, X } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import profileImg from '../../imports/ChatGPT_Image_Jun_4__2026__03_57_26_PM.png';
 
 export function HeroSection() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightboxOpen(false); };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [lightboxOpen]);
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    document.body.style.overflow = lightboxOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [lightboxOpen]);
+
   return (
+    <>
+      {/* Profile Photo Lightbox */}
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white bg-[#111118] border border-[#1E1E2E] rounded-full p-2 hover:border-[#00D4FF] hover:text-[#00D4FF] transition-colors"
+            onClick={() => setLightboxOpen(false)}
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
+          </button>
+          <div
+            className="relative max-w-xs sm:max-w-sm md:max-w-md w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={profileImg}
+              alt="Vedant Sutariya"
+              className="w-full h-full object-cover rounded-2xl border-2 border-[#00D4FF] shadow-[0_0_40px_rgba(0,212,255,0.35)]"
+            />
+          </div>
+        </div>
+      )}
+
     <section className="relative min-h-screen flex items-center pt-16 pb-12 overflow-hidden">
       {/* Background Grid Pattern */}
       <div
@@ -21,9 +64,13 @@ export function HeroSection() {
           {/* Left Column */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
             <div className="space-y-4 sm:space-y-6">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-[#00D4FF] shadow-[0_0_15px_rgba(0,212,255,0.4)]">
+              <button
+                onClick={() => setLightboxOpen(true)}
+                className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-[#00D4FF] shadow-[0_0_15px_rgba(0,212,255,0.4)] cursor-pointer hover:shadow-[0_0_25px_rgba(0,212,255,0.7)] hover:scale-105 transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#00D4FF] focus:ring-offset-2 focus:ring-offset-[#0A0A0F]"
+                aria-label="View profile photo"
+              >
                 <ImageWithFallback src={profileImg} alt="Vedant Sutariya" className="w-full h-full object-cover" />
-              </div>
+              </button>
 
               <div>
                 <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#F0F0FF] tracking-tight leading-none">
@@ -126,5 +173,6 @@ export function HeroSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }
