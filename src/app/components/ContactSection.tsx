@@ -17,11 +17,11 @@ export function ContactSection() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
           <a
-            href="mailto:vedantsutariya19@gmail.com"
+            href="mailto:vedant@vedantsutariya.com"
             className="flex items-center w-full sm:w-auto font-label text-sm text-[#F0F0FF] bg-[#111118] border border-[#1E1E2E] px-5 sm:px-6 py-3 sm:py-4 rounded-full hover:border-[#00D4FF] hover:shadow-[0_0_15px_rgba(0,212,255,0.2)] transition-all group justify-center sm:justify-start"
           >
             <Mail className="w-5 h-5 mr-3 text-[#6B7280] group-hover:text-[#00D4FF] flex-shrink-0" />
-            <span className="break-all">vedantsutariya19@gmail.com</span>
+            <span className="break-all">vedant@vedantsutariya.com</span>
           </a>
 
           <a
