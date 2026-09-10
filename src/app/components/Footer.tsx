@@ -15,11 +15,8 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="font-label text-xs text-[#6B7280] mb-1">
-            Built with: Vite · React · Tailwind · Cloudflare
-          </div>
           <div className="font-label text-xs text-[#6B7280]">
-            MCP Endpoints: /mcp/physagent · /mcp/esp32
+            Built with: Vite · React · Tailwind · Cloudflare
           </div>
         </div>
 

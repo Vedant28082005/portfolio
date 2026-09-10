@@ -11,8 +11,7 @@ export function ContactSection() {
         </h2>
 
         <div className="font-body text-[#F0F0FF] text-base sm:text-lg max-w-2xl mx-auto space-y-3 sm:space-y-4 mb-10 sm:mb-12">
-          <p>If you're working on hardware+AI systems, robotics, or industrial IoT —</p>
-          <p>I'm always interested in collabs, projects, and conversations.</p>
+          <p>Open to internships, projects, and conversations in embedded systems, IoT, and AI.</p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
