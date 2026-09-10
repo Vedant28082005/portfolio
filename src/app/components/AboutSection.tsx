@@ -13,12 +13,10 @@ export function AboutSection() {
               I build things that connect the physical world to intelligent systems.
             </p>
             <p className="font-body text-base md:text-lg text-[#F0F0FF] leading-relaxed">
-              From motor-driver firmware to RAG pipelines, I work across the full stack of
-              hardware + AI. Currently building PhysAgent (Embodied AI Platform) and
-              FactoryMind (Industrial AI Copilot) while finishing my B.Tech at PDEU.
+              B.Tech ICT student at PDEU (CGPA 8.86) with a Minor in Robotics. I work across embedded systems, IoT, and AI — from writing AVR C firmware and wiring I2C sensors to building Gemini-powered agents and deploying ML classifiers on edge hardware.
             </p>
             <p className="font-body text-base md:text-lg text-[#F0F0FF] leading-relaxed">
-              Hackathon winner. Drummer. Long-term goal: build something that scales.
+              Frontend Development Intern at Webytude Web Solutions (2026). Hackathon winner — 1st place at PDEU's IoT with Deep Learning hackathon.
             </p>
           </div>
 

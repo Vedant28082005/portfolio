@@ -3,15 +3,10 @@ import '../styles/fonts.css';
 
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
-import { AIEngineeringSection } from './components/AIEngineeringSection';
 import { TechnicalSkillsSection } from './components/TechnicalSkillsSection';
 import { HardwareSection } from './components/HardwareSection';
 import { ProjectsSection } from './components/ProjectsSection';
-import { AISystemsSection } from './components/AISystemsSection';
-import { PhysicalIntelligenceSection } from './components/PhysicalIntelligenceSection';
 import { EngineeringJourneySection } from './components/EngineeringJourneySection';
-import { ResearchInterestsSection } from './components/ResearchInterestsSection';
-import { ServicesSection } from './components/ServicesSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
@@ -34,9 +29,6 @@ export default function App() {
       <AboutSection />
       <Divider />
 
-      <AIEngineeringSection />
-      <Divider />
-
       <TechnicalSkillsSection />
       <Divider />
 
@@ -46,19 +38,7 @@ export default function App() {
       <ProjectsSection />
       <Divider />
 
-      <AISystemsSection />
-      <Divider />
-
-      <PhysicalIntelligenceSection />
-      <Divider />
-
       <EngineeringJourneySection />
-      <Divider />
-
-      <ResearchInterestsSection />
-      <Divider />
-
-      <ServicesSection />
       <Divider />
 
       <ContactSection />

@@ -3,11 +3,11 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const hardwareItems = [
   {
-    name: 'Arduino UNO Rev3',
+    name: 'Arduino UNO',
     specs: [
-      'AVR ATmega328P · 14 Digital I/O',
-      '6 PWM Channels · 6 Analog Inputs',
-      'Used for: Motor control, sensor prototyping, CNC monitoring, I/O testing',
+      'AVR ATmega328P · Embedded C / AVR C',
+      'I2C · Serial · 14 Digital I/O · 6 Analog',
+      'Used for: Sensor data acquisition, ENS160 + AHT21 I2C, serial-to-dashboard pipeline',
     ],
     image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg',
     tags: [
@@ -17,27 +17,27 @@ const hardwareItems = [
   {
     name: 'ESP32 DevKitC',
     specs: [
-      'Dual-core 240MHz · Wi-Fi + Bluetooth',
+      'Dual-core 240 MHz · Wi-Fi + Bluetooth',
       'GPIO / I2C / SPI / UART / ADC',
-      'Used for: IoT nodes, sensor fusion, micro-ROS, capacitive sensing',
+      'Used for: DHT11 IoT nodes, LLM gateway, ML weather classifier client',
     ],
     image: 'https://www.espressif.com/sites/all/themes/espressif/images/esp32-devkitc/esp32-devkitc-32e.png',
     tags: [
       { label: 'Wireless', color: 'text-[#00D4FF] bg-[#00D4FF]/10 border-[#00D4FF]/20' },
-      { label: 'Embedded', color: 'text-[#FF6B2B] bg-[#FF6B2B]/10 border-[#FF6B2B]/20' },
+      { label: 'IoT', color: 'text-[#FF6B2B] bg-[#FF6B2B]/10 border-[#FF6B2B]/20' },
     ],
   },
   {
     name: 'Raspberry Pi 5',
     specs: [
-      'Cortex-A76 · 4-core · PCIe 2.0',
-      'Runs Ubuntu 24.04 + ROS2 Jazzy',
-      'Used for: PhysAgent core, SLAM, camera streaming, MCP server',
+      'Cortex-A76 · 4-core · 40-pin GPIO',
+      'Python · Flask · Gemini AI Agent',
+      'Used for: RPi Agent HMI, GPIO programming via AI, edge inference',
     ],
     image: 'https://upload.wikimedia.org/wikipedia/commons/e/e7/Raspberry_Pi_5.jpg',
     tags: [
       { label: 'Linux', color: 'text-[#00FF88] bg-[#00FF88]/10 border-[#00FF88]/20' },
-      { label: 'Compute', color: 'text-[#00D4FF] bg-[#00D4FF]/10 border-[#00D4FF]/20' },
+      { label: 'AI', color: 'text-[#00D4FF] bg-[#00D4FF]/10 border-[#00D4FF]/20' },
     ],
   },
 ];

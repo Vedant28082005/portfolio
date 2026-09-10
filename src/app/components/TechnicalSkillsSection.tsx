@@ -2,34 +2,28 @@ import React from 'react';
 
 const skillCategories = [
   {
-    title: 'Languages',
-    color: 'text-[#00D4FF]',
-    borderColor: 'border-[#00D4FF]/20',
-    items: ['Python', 'C', 'C++', 'SQL', 'JavaScript', 'Embedded C'],
-  },
-  {
-    title: 'AI / Machine Learning',
-    color: 'text-[#00FF88]',
-    borderColor: 'border-[#00FF88]/20',
-    items: ['TensorFlow', 'Keras', 'PyTorch', 'Scikit-Learn', 'OpenCV', 'LangChain', 'Ollama', 'FAISS', 'Hugging Face', 'Prompt Engineering', 'RAG Systems'],
-  },
-  {
     title: 'Embedded & IoT',
     color: 'text-[#FF6B2B]',
     borderColor: 'border-[#FF6B2B]/20',
-    items: ['ESP32', 'Raspberry Pi', 'Arduino', 'I2C', 'SPI', 'UART', 'MQTT', 'Sensor Integration'],
+    items: ['Embedded Systems', 'Embedded C', 'AVR C', 'ESP32', 'Arduino', 'Raspberry Pi', 'Serial Communication', 'Sensors'],
   },
   {
-    title: 'Robotics',
+    title: 'AI / ML',
+    color: 'text-[#00FF88]',
+    borderColor: 'border-[#00FF88]/20',
+    items: ['Machine Learning', 'Deep Learning', 'Computer Vision', 'LLMs', 'RAG', 'AI Agents', 'Scikit-learn', 'Gemini API', 'Ollama'],
+  },
+  {
+    title: 'Software & Web',
     color: 'text-[#00D4FF]',
     borderColor: 'border-[#00D4FF]/20',
-    items: ['ROS2', 'SLAM', 'LiDAR', 'Sensor Fusion', 'Navigation Systems', 'Motor Control'],
+    items: ['Python', 'Flask', 'React', 'Vite', 'JavaScript', 'HTML', 'CSS'],
   },
   {
-    title: 'Software & Cloud',
+    title: 'Tools & Platforms',
     color: 'text-[#6B7280]',
     borderColor: 'border-[#6B7280]/20',
-    items: ['Git', 'Docker', 'Linux', 'FastAPI', 'React', 'Vite', 'REST APIs', 'AWS'],
+    items: ['AWS', 'MATLAB', 'COMSOL', 'Power BI', 'Git'],
   },
 ];
 
