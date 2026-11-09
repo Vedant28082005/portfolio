@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, FileText, Download, X } from 'lucide-react';
+import { Github, Linkedin, FileText, Download, X, Mail } from 'lucide-react';
+import { MAILTO, GITHUB, LINKEDIN, AVAILABILITY_BADGE, AVAILABILITY_TEXT } from '../site';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import profileImg from '../../imports/ChatGPT_Image_Jun_4__2026__03_57_26_PM.png';
 
@@ -41,7 +42,7 @@ export function HeroSection() {
           >
             <img
               src={profileImg}
-              alt="Vedant Sutariya"
+              alt="Portrait of Vedant Sutariya, Embedded Systems Engineer"
               className="w-full h-full object-cover rounded-2xl border-2 border-[#00D4FF] shadow-[0_0_40px_rgba(0,212,255,0.35)]"
             />
           </div>
@@ -69,18 +70,29 @@ export function HeroSection() {
                 className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-[#00D4FF] shadow-[0_0_15px_rgba(0,212,255,0.4)] cursor-pointer hover:shadow-[0_0_25px_rgba(0,212,255,0.7)] hover:scale-105 transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#00D4FF] focus:ring-offset-2 focus:ring-offset-[#0A0A0F]"
                 aria-label="View profile photo"
               >
-                <ImageWithFallback src={profileImg} alt="Vedant Sutariya" className="w-full h-full object-cover" />
+                <ImageWithFallback src={profileImg} alt="Portrait of Vedant Sutariya, Embedded Systems Engineer" className="w-full h-full object-cover" />
               </button>
 
               <div>
                 <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#F0F0FF] tracking-tight leading-none">
                   VEDANT <br /> SUTARIYA
+                  <span className="sr-only"> — Embedded Systems Engineer</span>
                 </h1>
                 <div className="w-20 sm:w-24 h-[2px] bg-[#00D4FF] mt-4 sm:mt-6" />
               </div>
 
               <div className="font-heading text-base sm:text-lg md:text-xl text-[#00D4FF]">
-                AI Engineer · Embedded Systems · Robotics
+                Embedded Systems Engineer · AI · Robotics
+              </div>
+
+              <div className="space-y-2">
+                <span className="inline-flex items-center gap-2 font-label text-xs sm:text-sm text-[#00FF88] bg-[#00FF88]/10 border border-[#00FF88]/30 px-3 py-1.5 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse flex-shrink-0" />
+                  {AVAILABILITY_BADGE}
+                </span>
+                <p className="font-body text-sm sm:text-base text-[#F0F0FF]/80 max-w-xl leading-relaxed">
+                  {AVAILABILITY_TEXT}
+                </p>
               </div>
 
               <div className="space-y-2">
@@ -96,13 +108,20 @@ export function HeroSection() {
 
             <div className="flex flex-wrap gap-2 sm:gap-3 pt-2">
               <a
+                href={MAILTO}
+                className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-[#00D4FF] text-[#0A0A0F] font-label text-sm font-semibold rounded-md hover:bg-[#00b8d9] transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                Hire me
+              </a>
+              <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-[#00D4FF] text-[#0A0A0F] font-label text-sm font-semibold rounded-md hover:bg-[#00b8d9] transition-colors"
+                className="flex items-center gap-2 px-4 sm:px-5 py-2.5 border border-[#00D4FF] text-[#00D4FF] font-label text-sm rounded-md hover:bg-[#00D4FF]/10 transition-colors"
               >
                 <FileText className="w-4 h-4" />
-                View Resume
+                View Resume (PDF)
               </a>
               <a
                 href="/resume.pdf"
@@ -113,17 +132,19 @@ export function HeroSection() {
                 Download
               </a>
               <a
-                href="https://github.com/Vedant28082005"
+                href={GITHUB}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Vedant Sutariya on GitHub"
                 className="flex items-center justify-center p-2.5 border border-[#1E1E2E] rounded-md text-[#6B7280] hover:text-[#00D4FF] hover:border-[#00D4FF] transition-colors"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://www.linkedin.com/in/vedant-sutariya-776268285"
+                href={LINKEDIN}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Vedant Sutariya on LinkedIn"
                 className="flex items-center justify-center p-2.5 border border-[#1E1E2E] rounded-md text-[#6B7280] hover:text-[#00D4FF] hover:border-[#00D4FF] transition-colors"
               >
                 <Linkedin className="w-5 h-5" />

@@ -10,6 +10,9 @@ export function Footer() {
             VEDANT SUTARIYA
           </div>
           <div className="font-label text-xs text-[#00D4FF]">
+            Embedded Systems Engineer · AI · Robotics
+          </div>
+          <div className="font-label text-xs text-[#6B7280] mt-1">
             vedantsutariya.com
           </div>
         </div>

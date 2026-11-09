@@ -11,7 +11,7 @@ export function ContactSection() {
         </h2>
 
         <div className="font-body text-[#F0F0FF] text-base sm:text-lg max-w-2xl mx-auto space-y-3 sm:space-y-4 mb-10 sm:mb-12">
-          <p>Open to internships, projects, and conversations in embedded systems, IoT, and AI.</p>
+          <p>Open to embedded systems and firmware roles: a ~6-month internship after December 2026 and full-time from 2027.</p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
@@ -46,9 +46,8 @@ export function ContactSection() {
 
         <div className="inline-flex flex-wrap justify-center items-center gap-2 font-label text-xs text-[#6B7280]">
           <span>Currently open to:</span>
-          <span className="px-2 py-1 bg-[#111118] rounded border border-[#1E1E2E]">Internships</span>
-          <span className="px-2 py-1 bg-[#111118] rounded border border-[#1E1E2E]">Research Collabs</span>
-          <span className="px-2 py-1 bg-[#111118] rounded border border-[#1E1E2E]">Freelance Hardware Projects</span>
+          <span className="px-2 py-1 bg-[#111118] rounded border border-[#1E1E2E]">Embedded / Firmware Internship</span>
+          <span className="px-2 py-1 bg-[#111118] rounded border border-[#1E1E2E]">Full-time from 2027</span>
         </div>
 
       </div>

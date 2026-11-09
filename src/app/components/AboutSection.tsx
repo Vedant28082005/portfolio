@@ -18,6 +18,16 @@ export function AboutSection() {
             <p className="font-body text-base md:text-lg text-[#F0F0FF] leading-relaxed">
               Frontend Development Intern at Webytude Web Solutions (2026). Hackathon winner — 1st place at PDEU's IoT with Deep Learning hackathon.
             </p>
+            <p className="font-body text-base md:text-lg text-[#F0F0FF] leading-relaxed">
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#00D4FF] underline underline-offset-4 hover:text-[#00b8d9] transition-colors"
+              >
+                Read the full Vedant Sutariya résumé (PDF)
+              </a>
+            </p>
           </div>
 
           {/* Right: Stat Cards */}

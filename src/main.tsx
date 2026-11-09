@@ -1,26 +1,20 @@
-import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router";
-import App from "./app/App.tsx";
-import { AdminLogin } from "./app/admin/AdminLogin.tsx";
-import { AdminDashboard } from "./app/admin/AdminDashboard.tsx";
-import { ProtectedRoute } from "./app/admin/ProtectedRoute.tsx";
+import { createRoot, hydrateRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router";
+import { AppRoutes } from "./app/AppRoutes.tsx";
+import { normalizePath } from "./app/seo.ts";
 import "./styles/index.css";
 
-createRoot(document.getElementById("root")!).render(
+const container = document.getElementById("root")!;
+const app = (
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/admin" element={<AdminLogin />} />
-      <Route
-        path="/admin/dashboard"
-        element={
-          <ProtectedRoute>
-            <AdminDashboard />
-          </ProtectedRoute>
-        }
-      />
-      {/* Catch-all → home */}
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <AppRoutes />
   </BrowserRouter>
 );
+
+// Hydrate only when the prerendered HTML is for this exact route (e.g. /admin falls back to the
+// prerendered home page, which must be replaced rather than hydrated).
+if (container.hasChildNodes() && container.dataset.route === normalizePath(location.pathname)) {
+  hydrateRoot(container, app);
+} else {
+  createRoot(container).render(app);
+}
